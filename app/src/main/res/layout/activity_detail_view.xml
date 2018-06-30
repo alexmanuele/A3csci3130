@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.acme.a3csci3130.DetailViewActivity">
     <EditText
+        android:id="@+id/det_name"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:id="@+id/det_name"
         android:hint = "Name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
