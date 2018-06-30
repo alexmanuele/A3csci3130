@@ -1,0 +1,52 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true",
+    "contacts": {
+				"$contact": {
+	"name": {
+            ".validate": "newData.isString()
+            && newData.val().length > 1
+            && newData.val().length < 49"
+          },          
+	
+	"businessNumber":{
+            ".validate": "newData.isString()
+            && newData.val().matches(/^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/)"
+          },
+          
+          "primaryBusiness":{
+            ".validate": "newData.isString()
+            && (
+              newData.val().matches(/^Fisher$/)||
+              newData.val().matches(/^Distributor$/)||
+              newData.val().matches(/^Processor$/)||
+              newData.val().matches(/^Fish Monger$/)
+            )"
+          },
+          "address":{
+            ".validate": "newData.isString()
+            && newData.val().length < 50"
+          },
+          "province":{
+            ".validate": "newData.isString()
+            && (newData.val().matches(/AB/)||
+                newData.val().matches(/BC/)||
+                newData.val().matches(/MB/)||
+                newData.val().matches(/NB/)||
+                newData.val().matches(/NL/)||
+                newData.val().matches(/NS/)||
+                newData.val().matches(/NT/)||
+                newData.val().matches(/NU/)||
+                newData.val().matches(/ON/)||
+                newData.val().matches(/PE/)||
+                newData.val().matches(/QC/)||
+                newData.val().matches(/SK/)||
+                newData.val().matches(/YT/)||
+                newData.val().matches(/ /)
+            )"
+          }
+        }
+    }
+  }
+}
